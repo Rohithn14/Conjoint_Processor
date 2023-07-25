@@ -1,0 +1,312 @@
+
+
+Fetch:
+PC enabled and MAR enabled and loaded
+RAM enabled and MDR loaded, PC Incremented
+MAR:0
+PC: 1
+Accumulator: 4
+Register B: 8
+
+
+<------Decoding:------->
+Address loaded in TMP register and opcode loaded in IR
+I/D Bit:1
+IR: 0
+TMP: 104
+
+
+
+
+Given OP code is for MRI ADD Instruction
+<-----MRI ADD Instruction Execution------>
+
+    Indirect ADD operation:   
+TMP enabled and MAR enabled and loaded
+RAM enabled and address loaded into TMP register
+TMP enabled and MAR enabled and loaded
+RAM enabled and value loaded into TMP register
+Accumulator value added to TMP register and result stored in Accumulator
+MAR: 102
+TMP: 7
+Final Value of Accumulator: 11
+Carry Flag: 0
+Zero Flag: 0
+Negative Flag: 0
+
+
+Fetch:
+PC enabled and MAR enabled and loaded
+RAM enabled and MDR loaded, PC Incremented
+MAR:1
+PC: 2
+Accumulator: 11
+Register B: 8
+
+
+<------Decoding:------->
+Address loaded in TMP register and opcode loaded in IR
+I/D Bit:0
+IR: 2
+TMP: 100
+
+
+
+
+Given OP code is for LDA Instruction
+<----LDA instruction Execution--->
+TMP enabled and MAR enabled and loaded
+RAM enabled and Accumulator loaded
+MAR: 100
+Value in given Address: 9
+Accumulator: 9
+Z flag: 0
+
+
+Fetch:
+PC enabled and MAR enabled and loaded
+RAM enabled and MDR loaded, PC Incremented
+MAR:2
+PC: 3
+Accumulator: 9
+Register B: 8
+
+
+<------Decoding:------->
+Address loaded in TMP register and opcode loaded in IR
+I/D Bit:1
+IR: 31
+TMP: 0
+
+
+Given OP Code is for NON-MRI ADD Instruction
+<---NON-MRI ADD Instruction Execution--->
+
+<---Adding A to B and storing the result in A
+Initial Value of Accumulator: 9
+Initial Value of register B: 8
+Final Value of Accumulator: 17
+Carry Flag: 0
+Zero Flag: 0
+Negative Flag: 0
+
+
+Fetch:
+PC enabled and MAR enabled and loaded
+RAM enabled and MDR loaded, PC Incremented
+MAR:3
+PC: 4
+Accumulator: 17
+Register B: 8
+
+
+<------Decoding:------->
+Address loaded in TMP register and opcode loaded in IR
+I/D Bit:0
+IR: 31
+TMP: 4
+
+
+Given OP Code is for NON-MRI SWAP Instruction
+<---NON-MRI SWAP Instruction Execution--->
+
+Accumulator enabled and TMP register loaded
+Accumulator: 17
+TMP: 17
+B register enabled and Accumulator loaded
+B: 8
+A: 8
+TMP register enabled and B register loaded
+TMP: 17
+B: 17
+Final Value in A after swapping: 8
+Final Value in B after swapping: 17
+
+
+Fetch:
+PC enabled and MAR enabled and loaded
+RAM enabled and MDR loaded, PC Incremented
+MAR:4
+PC: 5
+Accumulator: 8
+Register B: 17
+
+
+<------Decoding:------->
+Address loaded in TMP register and opcode loaded in IR
+I/D Bit:0
+IR: 25
+TMP: 14
+
+
+Given OP Code is for Immediate ADD Instruction
+<---Immediate ADD Instruction Execution--->
+
+Value in the Accumulator after Addition: 22
+Carry Flag: 0
+
+
+Fetch:
+PC enabled and MAR enabled and loaded
+RAM enabled and MDR loaded, PC Incremented
+MAR:5
+PC: 6
+Accumulator: 22
+Register B: 17
+
+
+<------Decoding:------->
+Address loaded in TMP register and opcode loaded in IR
+I/D Bit:0
+IR: 30
+TMP: 4
+
+
+Given OP Code is for Immediate ROR Instruction
+<---Immediate ROR Instruction--->
+Given number of rotations: 4
+Initial Value of Accumulator: 22
+Interrupt Flag: 1
+Interrupt Has occured
+Handling the Interrupt: 
+Since rotations are more than the rotations possible by barrel shifter
+Take modulo 3 to the no of rotations given
+No. of rotations after handling interrupt: 1
+In this way the interrupt is handled
+Resetting the Interrupt Flag.......
+Interrupt Flag: 0
+Final Value of Accumulator after performing 1 right rotations: 11
+Zero Flag: 0
+
+
+Fetch:
+PC enabled and MAR enabled and loaded
+RAM enabled and MDR loaded, PC Incremented
+MAR:6
+PC: 7
+Accumulator: 11
+Register B: 17
+
+
+<------Decoding:------->
+Address loaded in TMP register and opcode loaded in IR
+I/D Bit:0
+IR: 27
+TMP: 1
+
+
+Given OP Code is for Immediate RRX Instruction
+<---Immediate RRX Instruction Execution--->
+
+Initial Value of Accumulator: 11
+Initial Value of Carry Flag: 0
+Final Value of Accumulator: 5
+Final Value of Carry Flag: 1
+
+
+Fetch:
+PC enabled and MAR enabled and loaded
+RAM enabled and MDR loaded, PC Incremented
+MAR:7
+PC: 8
+Accumulator: 5
+Register B: 17
+
+
+<------Decoding:------->
+Address loaded in TMP register and opcode loaded in IR
+I/D Bit:1
+IR: 31
+TMP: 128
+
+
+Given OP Code is for MUL Instruction
+<---MUL Instruction Execution--->
+
+Multiplying A to B
+Value in Accumulator: 5
+Value in register B: 17
+Final result after Multiplying: 85
+Value in register H: 85
+Carry Flag: 0
+
+
+Fetch:
+PC enabled and MAR enabled and loaded
+RAM enabled and MDR loaded, PC Incremented
+MAR:8
+PC: 9
+Accumulator: 5
+Register B: 17
+
+
+<------Decoding:------->
+Address loaded in TMP register and opcode loaded in IR
+I/D Bit:0
+IR: 31
+TMP: 64
+
+
+Given OP Code is for DIV Instruction
+<---DIV Instruction Execution--->
+
+Accumulator initial Value: 5
+Register B initial Value: 17
+Dividing B by A
+Value of Accumulator after dividing: 3
+
+
+Fetch:
+PC enabled and MAR enabled and loaded
+RAM enabled and MDR loaded, PC Incremented
+MAR:9
+PC: 10
+Accumulator: 3
+Register B: 17
+
+
+<------Decoding:------->
+Address loaded in TMP register and opcode loaded in IR
+I/D Bit:0
+IR: 26
+TMP: 25
+
+
+Given OP Code is for Immediate PUSH Instruction
+<---Immediate PUSH Instruction Execution--->
+
+Initial Address of Stack Pointer: 4096
+Final Address of Stack Pointer: 4095
+Value at the address pointed by Stack Pointer: 25
+
+
+Fetch:
+PC enabled and MAR enabled and loaded
+RAM enabled and MDR loaded, PC Incremented
+MAR:10
+PC: 11
+Accumulator: 3
+Register B: 17
+
+
+<------Decoding:------->
+Address loaded in TMP register and opcode loaded in IR
+I/D Bit:0
+IR: 21
+TMP: 25
+
+
+Given OP Code is for POP Instruction
+<---POP Instruction Execution--->
+
+Initial Address of Stack Pointer: 4095
+Value at this Address: 25
+Final Address of Stack Pointer: 4096
+Popped Value is Stored in Accumulator
+Value in Accumulator: 25
+Z Flag: 0
+
+
+
+          Program Execution Completed
+                  Thank You          
